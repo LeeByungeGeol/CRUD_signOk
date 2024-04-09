@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: CRUD_signOk
+
+  # DB Connection
+  datasource:
+    url: jdbc:postgresql://localhost:5432/public
+    username: lbg
+    password : password
+    driver-class-name: org.postgresql.Driver
+
+# mybatis
+mybatis:
+  config: mybatis/mybatis-config.xml
+  type-aliases-package: com.first
+  mapper-locations: mapper/* .xml
+  configuration:
+    map-underscore-to-camel-case: true
