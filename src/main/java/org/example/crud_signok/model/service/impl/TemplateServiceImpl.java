@@ -1,10 +1,13 @@
 package org.example.crud_signok.model.service.impl;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionManager;
 import org.example.crud_signok.mapper.TemplateMapper;
 import org.example.crud_signok.Template.TemplateVO;
 import org.example.crud_signok.model.service.TemplateService;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,42 +15,34 @@ import java.util.List;
 
 @Slf4j
 @Service
+@RequiredArgsConstructor
 public class TemplateServiceImpl implements TemplateService {
 
-    private final SqlSession sqlSession;
+    private final SqlSessionTemplate sqlSessionTemplate;
 
-    public TemplateServiceImpl(SqlSession ss) {
-        this.sqlSession = ss;
-    }
-
-
-    @Transactional(readOnly = true)
     public List<TemplateVO> selectTempList() {
-        TemplateMapper tm = sqlSession.getMapper(TemplateMapper.class);
+        TemplateMapper tm = sqlSessionTemplate.getMapper(TemplateMapper.class);
+        System.out.println(tm.selectTempList());
         return tm.selectTempList();
     }
 
-    @Transactional(readOnly = true)
     public TemplateVO selectTempById(Integer templateId) {
-        TemplateMapper tm = sqlSession.getMapper(TemplateMapper.class);
+        TemplateMapper tm = sqlSessionTemplate.getMapper(TemplateMapper.class);
         return tm.selectTempById(templateId);
     }
 
-    @Transactional
     public int insertTemp(TemplateVO templateVO) {
-        TemplateMapper tm = sqlSession.getMapper(TemplateMapper.class);
+        TemplateMapper tm = sqlSessionTemplate.getMapper(TemplateMapper.class);
         return tm.insertTemp(templateVO);
     }
 
-    @Transactional
     public int updateTemp(TemplateVO templateVO) {
-        TemplateMapper tm = sqlSession.getMapper(TemplateMapper.class);
+        TemplateMapper tm = sqlSessionTemplate.getMapper(TemplateMapper.class);
         return tm.updateTemp(templateVO);
     }
 
-    @Transactional
     public int deleteTempById(Integer templateId) {
-        TemplateMapper tm = sqlSession.getMapper(TemplateMapper.class);
+        TemplateMapper tm = sqlSessionTemplate.getMapper(TemplateMapper.class);
         return tm.deleteTempById(templateId);
     }
 }

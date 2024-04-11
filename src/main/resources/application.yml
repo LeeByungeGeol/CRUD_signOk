@@ -4,10 +4,10 @@ spring:
 
   # DB Connection
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:5432/userlist
     username: lbg
     password : password
-    driver-class-name: org.postgresql.Driver
+#    driver-class-name: org.postgresql.Driver
 
 # mybatis
 mybatis:
@@ -16,3 +16,8 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true
+
+logging:
+  level:
+    org.example.crud_signok : trace
+    org.hibernate.sql: trace

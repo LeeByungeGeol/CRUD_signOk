@@ -4,8 +4,6 @@ import org.example.crud_signok.Template.TemplateVO;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
-@Repository
 public interface TemplateMapper {
     List<TemplateVO> selectTempList();
 

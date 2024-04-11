@@ -1,5 +1,6 @@
 package org.example.crud_signok.controller;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.crud_signok.Template.TemplateVO;
 import org.example.crud_signok.model.service.TemplateService;
@@ -13,21 +14,11 @@ import java.util.List;
 
 @Slf4j
 @RequestMapping("/temp")
-@Controller
-//@RestController
+@RestController
+@RequiredArgsConstructor
 public class TemplateController {
 
     private final TemplateService templateService;
-
-    public TemplateController(TemplateService ts) {
-        this.templateService = ts;
-    }
-
-    @GetMapping("main")
-    public String selectTemplateView(Model model) {
-        model.addAttribute("title", "템플릿 화면");
-        return "temp/templatePage";
-    }
 
     @PostMapping("templateList")
     public ResponseEntity<List<TemplateVO>> selectTemplateList() {
