@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.demo.demoApi.mapper.TemplateMapper">
+<mapper namespace="org.example.crud_signok.mapper.TemplateMapper">
 
-    <select id="selectTempList" resultType="TemplateVO">
-        SELECT template_id,
-               template_name,
-               template_etc
-        FROM tb_template;
-    </select>
+<!--    <select id="selectTempList" resultType="TemplateVO">-->
+<!--        SELECT template_id,-->
+<!--               template_name,-->
+<!--               template_etc-->
+<!--        FROM tb_template;-->
+<!--    </select>-->
 
-    <select id="selectTempById" resultType="TemplateVO">
-        SELECT template_id,
-               template_name,
-               template_etc
-        FROM tb_template
-        WHERE template_id = #{templateId}
-    </select>
+<!--    <select id="selectTempById" resultType="TemplateVO">-->
+<!--        SELECT template_id,-->
+<!--               template_name,-->
+<!--               template_etc-->
+<!--        FROM tb_template-->
+<!--        WHERE template_id = #{templateId}-->
+<!--    </select>-->
 
-    <insert id="insertTemp" parameterType="TemplateVO">
-        INSERT INTO tb_template(template_id, template_name, template_etc)
-        values (#{templateId}, #{templateName}, #{templateEtc});
-    </insert>
+<!--    <insert id="insertTemp" parameterType="TemplateVO">-->
+<!--        INSERT INTO tb_template(template_id, template_name, template_etc)-->
+<!--        values (#{templateId}, #{templateName}, #{templateEtc});-->
+<!--    </insert>-->
 
-    <update id="updateTemp" parameterType="TemplateVO">
-        UPDATE tb_template
-        SET template_name= #{templateName}
-          , template_etc = #{templateEtc}
-        WHERE template_id = #{templateId}
-    </update>
+<!--    <update id="updateTemp" parameterType="TemplateVO">-->
+<!--        UPDATE tb_template-->
+<!--        SET template_name= #{templateName}-->
+<!--          , template_etc = #{templateEtc}-->
+<!--        WHERE template_id = #{templateId}-->
+<!--    </update>-->
 
-    <delete id="deleteTempById">
-        DELETE
-        FROM tb_template
-        WHERE template_id = #{templateId}
-    </delete>
+<!--    <delete id="deleteTempById">-->
+<!--        DELETE-->
+<!--        FROM tb_template-->
+<!--        WHERE template_id = #{templateId}-->
+<!--    </delete>-->
 
 </mapper>
