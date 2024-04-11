@@ -1,10 +1,12 @@
-package org.example.crud_signok.model.service;
+package org.example.crud_signok.mapper;
 
 import org.example.crud_signok.Template.TemplateVO;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface TemplateService {
+@Repository
+public interface TemplateMapper {
     List<TemplateVO> selectTempList();
 
     TemplateVO selectTempById(Integer templateId);

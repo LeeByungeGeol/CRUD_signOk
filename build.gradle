@@ -26,13 +26,15 @@ dependencies {
 //	implementation "org.mybatis:mybatis:3.4.5"
 
 	// postgresql
-	implementation 'org.postgresql:postgresql:42.5.1'
-	runtimeOnly group: 'org.postgresql', name: 'postgresql', version: '42.5.2'
+//	implementation 'org.postgresql:postgresql:42.5.1'
+//	runtimeOnly group: 'org.postgresql', name: 'postgresql', version: '42.5.2'
+	runtimeOnly 'org.postgresql:postgresql'
 
 	// lombok plugin
 	implementation('org.projectlombok:lombok')
 	annotationProcessor('org.projectlombok:lombok')
 }
+
 
 tasks.named('test') {
 	useJUnitPlatform()

@@ -11,8 +11,8 @@ spring:
 
 # mybatis
 mybatis:
-  config: mybatis/mybatis-config.xml
-  type-aliases-package: com.first
-  mapper-locations: mapper/* .xml
+#  config: mybatis/mybatis-config.xml
+  type-aliases-package: org.example.crud_signok.model
+  mapper-locations: classpath:mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true

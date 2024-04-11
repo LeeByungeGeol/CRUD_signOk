@@ -2,8 +2,8 @@ package org.example.crud_signok.model.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
-import org.example.crud_signok.model.Template.TemplateMapper;
-import org.example.crud_signok.model.Template.TemplateVO;
+import org.example.crud_signok.mapper.TemplateMapper;
+import org.example.crud_signok.Template.TemplateVO;
 import org.example.crud_signok.model.service.TemplateService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

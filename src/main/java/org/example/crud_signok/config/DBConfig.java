@@ -1,4 +1,4 @@
-package org.example.crud_signok;
+package org.example.crud_signok.config;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -12,17 +12,16 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 
 @Configuration
-//@MapperScan(basePackages = "com.demo.demoApi.mapper")
+@MapperScan(basePackages = "org.example.crud_signok.mapper")
 @EnableTransactionManagement
 public class DBConfig {
-
     @Bean
     public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-        sessionFactory.setDataSource(dataSource);
+        sessionFactory.setDataSource(dataSource);                                                   // 데이터베이스와 연결을 위한 DataSource 지정
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        sessionFactory.setMapperLocations(resolver.getResources("mapper/*.xml"));
-        return sessionFactory.getObject();
+        sessionFactory.setMapperLocations(resolver.getResources("mapper/*.xml"));      // 구성한 Mapper 파일의 경로를 지정
+        return sessionFactory.getObject();                                                          // SqlSessionFactory 객체 구성
     }
 
     @Bean
