@@ -4,7 +4,7 @@ spring:
 
   # DB Connection
   datasource:
-    url: jdbc:postgresql://localhost:5432/public
+    url: jdbc:postgresql://localhost:5432/postgres
     username: lbg
     password : password
     driver-class-name: org.postgresql.Driver
@@ -12,7 +12,7 @@ spring:
 # mybatis
 mybatis:
 #  config: mybatis/mybatis-config.xml
-  type-aliases-package: org.example.crud_signok.model
+  type-aliases-package: org.example.crud_signok.Template
   mapper-locations: classpath:mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true
